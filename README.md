@@ -41,7 +41,7 @@ Alcatraz a beaucoup de fonctionnalités, avec **9 catégories principales**:
 * 2- Ouvrez le dossier `alcatraz-main` et crée un dossier `data`.
 * 3- Ouvrez la racine de votre dossier avec CMD
 * 4- Faite la commande `npm install`, `npm install figlet`, et `npm install node-superfetch`.
-* 5- Allez dans le fichier `config.jon` et le remplir.
+* 5- Allez dans le fichier `config.json` et le remplir.
 * 6- Après faite dans le CMD `npm start`.
 
 ## Lien utiles
