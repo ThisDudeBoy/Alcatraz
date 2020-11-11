@@ -37,8 +37,8 @@ Alcatraz a beaucoup de fonctionnalités, avec **9 catégories principales**:
 *   👑 **Owner**: `delallservpoints`, `quitguild`, `servers`, `eval`, `deluserpoints` et **+**! 
 
 ## Installation
-* 1- Commencer par télécharger le repo et d'extraire le dossier `alcatraz-master`sur votre bureau.
-* 2- Ouvrez le dossier `alcatraz-master` et crée un dossier `data`.
+* 1- Commencer par télécharger le repo et d'extraire le dossier `alcatraz-main`sur votre bureau.
+* 2- Ouvrez le dossier `alcatraz-main` et crée un dossier `data`.
 * 3- Ouvrez la racine de votre dossier avec CMD
 * 4- Faite la commande `npm install`, `npm install figlet`, et `npm install node-superfetch`.
 * 5- Allez dans le fichier `config.jon` et le remplir.
