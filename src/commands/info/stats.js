@@ -13,87 +13,22 @@
 //● Github: https://github.com/GalackQSM/Alcatraz                                                      
 //=======================================================================                                                                      
                                                                        
-const Command = require('../Alcatraz.js');
-const { MessageEmbed } = require('discord.js');
-const moment = require('moment');
-const { mem, cpu, os } = require('node-os-utils');
-const { stripIndent } = require('common-tags');
-const Discord = require('discord.js')
-const { utc } = require("moment");
-const emojis = require('../../utils/emojis.json');
-const config = require('../../../config.json');
-
-module.exports = class StatsCommand extends Command {
-  constructor(client) {
-    super(client, {
-      name: 'stats',
-      aliases: ['statistics', 'metrics'],
-      usage: 'stats',
-      description: 'Avoir les stats du bot.',
-      type: client.types.INFO
-    });
-  }
-  async run(message) {
-    const d = moment.duration(message.client.uptime);
-    const days = (d.days() == 1) ? `${d.days()} jour` : `${d.days()} jours`;
-    const hours = (d.hours() == 1) ? `${d.hours()} heure` : `${d.hours()} heures`;
-    const seconds = (d.seconds() == 1) ? `${d.seconds()} seconde` : `${d.seconds()} secondes`;
-    const donateurStats = stripIndent`
+const _0x173a=['\x20byte','\x20bytes','\x20heure','setTitle','Statistiques\x20d\x27Alcatraz','types','moment','floor','cache','statistics','version','keys','toFixed','setTimestamp','INFO','usage','format','node-os-utils','`\x20catégories','`\x20aliases','#2f3136','channels','Avoir\x20les\x20stats\x20du\x20bot.','count','info','[Alcatraz\x20Empire](https://discord.gg/aGP5kvxFEc)\x20|\x20','https://i.imgur.com/WP9d2Z2.png','__Alcatraz__','[SiteWeb](https://alcatraz-bot.com)\x20|\x20','seconds','size','stats','**\x0a●\x20Source\x20développer\x20par\x20**GalackQSM#0895**!','round','versions','\x20heures','footer','channel','\x20jour','duration','../Alcatraz.js','__Serveur__','setDescription','memberCount','commands','send','hours','setImage','addField','**[Ajouter\x20Alcatraz](https://discordapp.com/oauth2/authorize?client_id=774652242787041310&scope=bot&permissions=2146958847)\x20|\x20','createdTimestamp','../../utils/emojis.json','length','days','ping','aliases','Commandes:','setColor','guilds','[Github](https://github.com/GalackQSM/Alcatraz)\x20|\x20','\x20KB','user','liens','●\x20**Alcatraz**\x20a\x20été\x20créé\x20par\x20**GalackQSM#0895**\x0a●\x20Merci\x20à\x20[Flaticon](https://flaticon.com/)\x20pour\x20presque\x20tous\x20les\x20emojis!\x0a●\x20**Alcatraz**\x20à\x20été\x20crée\x20le\x20**','reduce','client','common-tags'];(function(_0x5f2e35,_0x456c1c){const _0x173af4=function(_0x391b5c){while(--_0x391b5c){_0x5f2e35['push'](_0x5f2e35['shift']());}};_0x173af4(++_0x456c1c);}(_0x173a,0x86));const _0x391b=function(_0x5f2e35,_0x456c1c){_0x5f2e35=_0x5f2e35-0xf6;let _0x173af4=_0x173a[_0x5f2e35];return _0x173af4;};const _0x3f90e3=_0x391b,Command=require(_0x3f90e3(0x11e)),{MessageEmbed}=require('discord.js'),moment=require(_0x3f90e3(0xfc)),{mem,cpu,os}=require(_0x3f90e3(0x107)),{stripIndent}=require(_0x3f90e3(0x138)),Discord=require('discord.js'),{utc}=require('moment'),emojis=require(_0x3f90e3(0x129)),config=require('../../../config.json');module['exports']=class StatsCommand extends Command{constructor(_0x3f413e){const _0x1c13f0=_0x3f90e3;super(_0x3f413e,{'name':_0x1c13f0(0x115),'aliases':[_0x1c13f0(0xff),'metrics'],'usage':_0x1c13f0(0x115),'description':_0x1c13f0(0x10c),'type':_0x3f413e[_0x1c13f0(0xfb)][_0x1c13f0(0x104)]});}async['run'](_0x11de9c){const _0x5ee509=_0x3f90e3,_0xe45cc2=moment[_0x5ee509(0x11d)](_0x11de9c[_0x5ee509(0x137)]['uptime']),_0x3d0597=_0xe45cc2[_0x5ee509(0x12b)]()==0x1?_0xe45cc2[_0x5ee509(0x12b)]()+_0x5ee509(0x11c):_0xe45cc2[_0x5ee509(0x12b)]()+'\x20jours',_0x2c531d=_0xe45cc2[_0x5ee509(0x124)]()==0x1?_0xe45cc2[_0x5ee509(0x124)]()+_0x5ee509(0xf8):_0xe45cc2['hours']()+_0x5ee509(0x119),_0x36c0f4=_0xe45cc2[_0x5ee509(0x113)]()==0x1?_0xe45cc2[_0x5ee509(0x113)]()+'\x20seconde':_0xe45cc2['seconds']()+'\x20secondes',_0x22c10a=stripIndent`
       \`• GalackQSM#0895\`
       \`• Vide\`
-    `;
-    const clientStats = stripIndent`
-      **• Serveurs:** ${message.client.guilds.cache.size}
-      **• Membres:** ${message.client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)}
-      **• Salons:** ${message.client.channels.cache.size}
-      **• Emojis:** ${message.client.emojis.cache.size}
-      **• Ping:** ${Math.round(message.client.ws.ping)}ms
-      **• En ligne depuis:** ${days} et ${hours}
-    `;
-    const { totalMemMb, usedMemMb } = await mem.info();
-    const serverStats = stripIndent`
-      **• Modèle:** ${cpu.model()}
-      **• Cores:** ${cpu.count()}
-      **• CPU:** ${await cpu.usage()} %
-      **• RAM Total:** ${totalMemMb} MB
-      **• RAM:** ${usedMemMb} MB 
-      **• DiscordJS:** ${Discord.version} MB 
-      **• NodeJS:** ${process.versions.node} MB 
-    `;
-    const embed = new MessageEmbed()
-      .setTitle('Statistiques d\'Alcatraz')
-      .setDescription(`● **Alcatraz** a été créé par **GalackQSM#0895**\n● Merci à [Flaticon](https://flaticon.com/) pour presque tous les emojis!\n● **Alcatraz** à été crée le **${utc(message.client.user.createdTimestamp).format('DD/MM/YYYY à HH:mm:ss')}**\n● Source développer par **GalackQSM#0895**!`) //merci de laisser le copyright "● Source développer par **GalackQSM#0895**!"
-      .addField('Commandes:', `\`${message.client.commands.size}\` commandes`, true)
-      .addField('Aliases:', `\`${message.client.aliases.size}\` aliases`, true)
-      .addField('Catégories:', `\`${Object.keys(message.client.types).length}\` catégories`, true)
-      .addField('__Les donateurs d\'Alcatraz__', `${donateurStats}`)
-      .addField('__Alcatraz__', `${clientStats}`)
-      .addField('__Serveur__', `${serverStats}`)
-      .addField(''+emojis.liens+' Liens', '**[Ajouter Alcatraz](https://discordapp.com/oauth2/authorize?client_id=774652242787041310&scope=bot&permissions=2146958847) | '+'[Alcatraz Empire](https://discord.gg/aGP5kvxFEc) | '+'[Github](https://github.com/GalackQSM/Alcatraz) | '+'[SiteWeb](https://alcatraz-bot.com) | '+'[Dons](https://www.patreon.com/AlcatrazBot)**')
-        .setImage('https://i.imgur.com/WP9d2Z2.png')
-        .setFooter(config.footer)
-        .setTimestamp()
-        .setColor("#2f3136");
-    message.channel.send(embed);
-  }
-};
-function formatSizeUnits(bytes) {
-  if (bytes >= 1073741824) { bytes = (bytes / 1073741824).toFixed(2) + " GB"; }
-  else if (bytes >= 1048576) { bytes = (bytes / 1048576).toFixed(2) + " MB"; }
-  else if (bytes >= 1024) { bytes = (bytes / 1024).toFixed(2) + " KB"; }
-  else if (bytes > 1) { bytes = bytes + " bytes"; }
-  else if (bytes == 1) { bytes = bytes + " byte"; }
-  else { bytes = "0 bytes"; }
-  return bytes;
-}
-function convertMS(milliseconds) {
-  var day, hour, minute, seconds;
-  seconds = Math.floor(milliseconds / 1000);
-  minute = Math.floor(seconds / 60);
-  seconds = seconds % 60;
-  hour = Math.floor(minute / 60);
-  minute = minute % 60;
-  day = Math.floor(hour / 24);
-  hour = hour % 24;
-  return { day: day, hour: hour, minute: minute, seconds: seconds };
-}
+    `,_0x8d0a=stripIndent`
+      **• Serveurs:** ${_0x11de9c[_0x5ee509(0x137)][_0x5ee509(0x130)][_0x5ee509(0xfe)]['size']}
+      **• Membres:** ${_0x11de9c[_0x5ee509(0x137)][_0x5ee509(0x130)][_0x5ee509(0xfe)][_0x5ee509(0x136)]((_0x13ed53,_0x5b969a)=>_0x13ed53+_0x5b969a[_0x5ee509(0x121)],0x0)}
+      **• Salons:** ${_0x11de9c['client'][_0x5ee509(0x10b)]['cache']['size']}
+      **• Emojis:** ${_0x11de9c[_0x5ee509(0x137)]['emojis']['cache']['size']}
+      **• Ping:** ${Math[_0x5ee509(0x117)](_0x11de9c['client']['ws'][_0x5ee509(0x12c)])}ms
+      **• En ligne depuis:** ${_0x3d0597} et ${_0x2c531d}
+    `,{totalMemMb:_0x4825e0,usedMemMb:_0x572ece}=await mem[_0x5ee509(0x10e)](),_0x299b66=stripIndent`
+      **• Modèle:** ${cpu['model']()}
+      **• Cores:** ${cpu[_0x5ee509(0x10d)]()}
+      **• CPU:** ${await cpu[_0x5ee509(0x105)]()} %
+      **• RAM Total:** ${_0x4825e0} MB
+      **• RAM:** ${_0x572ece} MB 
+      **• DiscordJS:** ${Discord[_0x5ee509(0x100)]} MB 
+      **• NodeJS:** ${process[_0x5ee509(0x118)]['node']} MB 
+    `,_0x582a12=new MessageEmbed()[_0x5ee509(0xf9)](_0x5ee509(0xfa))[_0x5ee509(0x120)](_0x5ee509(0x135)+utc(_0x11de9c[_0x5ee509(0x137)][_0x5ee509(0x133)][_0x5ee509(0x128)])[_0x5ee509(0x106)]('DD/MM/YYYY\x20à\x20HH:mm:ss')+_0x5ee509(0x116))['addField'](_0x5ee509(0x12e),'`'+_0x11de9c[_0x5ee509(0x137)][_0x5ee509(0x122)]['size']+'`\x20commandes',!![])[_0x5ee509(0x126)]('Aliases:','`'+_0x11de9c[_0x5ee509(0x137)][_0x5ee509(0x12d)][_0x5ee509(0x114)]+_0x5ee509(0x109),!![])[_0x5ee509(0x126)]('Catégories:','`'+Object[_0x5ee509(0x101)](_0x11de9c[_0x5ee509(0x137)][_0x5ee509(0xfb)])[_0x5ee509(0x12a)]+_0x5ee509(0x108),!![])[_0x5ee509(0x126)]('__Les\x20donateurs\x20d\x27Alcatraz__',''+_0x22c10a)['addField'](_0x5ee509(0x111),''+_0x8d0a)[_0x5ee509(0x126)](_0x5ee509(0x11f),''+_0x299b66)['addField'](''+emojis[_0x5ee509(0x134)]+'\x20Liens',_0x5ee509(0x127)+_0x5ee509(0x10f)+_0x5ee509(0x131)+_0x5ee509(0x112)+'[Dons](https://www.patreon.com/AlcatrazBot)**')[_0x5ee509(0x125)](_0x5ee509(0x110))['setFooter'](config[_0x5ee509(0x11a)])[_0x5ee509(0x103)]()[_0x5ee509(0x12f)](_0x5ee509(0x10a));_0x11de9c[_0x5ee509(0x11b)][_0x5ee509(0x123)](_0x582a12);}};function formatSizeUnits(_0xa595a9){const _0x3059e5=_0x3f90e3;if(_0xa595a9>=0x40000000)_0xa595a9=(_0xa595a9/0x40000000)[_0x3059e5(0x102)](0x2)+'\x20GB';else{if(_0xa595a9>=0x100000)_0xa595a9=(_0xa595a9/0x100000)[_0x3059e5(0x102)](0x2)+'\x20MB';else{if(_0xa595a9>=0x400)_0xa595a9=(_0xa595a9/0x400)[_0x3059e5(0x102)](0x2)+_0x3059e5(0x132);else{if(_0xa595a9>0x1)_0xa595a9=_0xa595a9+_0x3059e5(0xf7);else _0xa595a9==0x1?_0xa595a9=_0xa595a9+_0x3059e5(0xf6):_0xa595a9='0\x20bytes';}}}return _0xa595a9;}function convertMS(_0x2069c4){const _0x229065=_0x3f90e3;var _0x5812c7,_0x1886a3,_0x1b8427,_0x588d73;return _0x588d73=Math[_0x229065(0xfd)](_0x2069c4/0x3e8),_0x1b8427=Math[_0x229065(0xfd)](_0x588d73/0x3c),_0x588d73=_0x588d73%0x3c,_0x1886a3=Math[_0x229065(0xfd)](_0x1b8427/0x3c),_0x1b8427=_0x1b8427%0x3c,_0x5812c7=Math[_0x229065(0xfd)](_0x1886a3/0x18),_0x1886a3=_0x1886a3%0x18,{'day':_0x5812c7,'hour':_0x1886a3,'minute':_0x1b8427,'seconds':_0x588d73};}
