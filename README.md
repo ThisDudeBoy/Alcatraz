@@ -9,7 +9,7 @@
 
 > Ce bot est sous licence et également en open-source.
 
-Alcatraz est un bot Discord codé en JavaScript avec [Discord.js](https://discord.js.org) et [sqlite](https://www.sqlite.org) par [GalackQSM](https://github.com/GalackQSM).  
+Alcatraz est un bot Discord codé en JavaScript avec [Discord.js](https://discord.js.org) et [SQLITE](https://www.sqlite.org).  
 N'hésitez pas à ajouter une étoile ⭐ au référentiel pour promouvoir le projet!
 ## Informations
 
