@@ -2,9 +2,9 @@
 
 # Alcatraz
 
-[![](https://img.shields.io/discord/766318515619102730.svg?logo=discord&colorB=7289DA)](https://discord.gg/aGP5kvxFEc)
+[![](https://img.shields.io/discord/793143215057272892.svg?logo=discord&colorB=7289DA)](https://discord.com/invite/MYMAW3Ff53)
 [![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://discord.js.org/)
-[![](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/GalackQSM)
+[![](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/alboomdon)
 [![](https://www.codefactor.io/repository/gitlab/galackqsm/alcatraz/badge)](https://www.codefactor.io/repository/gitlab/galackqsm/Alcatraz)
 
 > Ce bot est sous licence et également en open-source.
@@ -46,6 +46,6 @@ Alcatraz a beaucoup de fonctionnalités, avec **9 catégories principales**:
 
 ## Lien utiles
 
-*   [Discord](https://discord.gg/HPtTfqDdMr)
-*   [Github](https://github.com/GalackQSM/Alcatraz)
+*   [Discord](https://discord.com/invite/MYMAW3Ff53)
+*   [Github](https://github.com/ThisDudeBoy/Alcatraz/)
 
