@@ -56,7 +56,7 @@ module.exports = class StatsCommand extends Command {
     `;
     const embed = new MessageEmbed()
       .setTitle('Statistiques d\'Alcatraz')
-      .setDescription(`● **Alcatraz** a été créé par **GalackQSM#0895**\n● Merci à [Flaticon](https://flaticon.com/) pour presque tous les emojis!\n● **Alcatraz** à été crée le **${utc(message.client.user.createdTimestamp).format('DD/MM/YYYY à HH:mm:ss')}**\n● **Alcatraz** est un bot open source développé par **GalackQSM#0895**!`)
+      .setDescription(`● **Alcatraz** a été créé par **GalackQSM#0895** & **Alex.#7331**\n● Merci à [Flaticon](https://flaticon.com/) pour presque tous les emojis!\n● **Alcatraz** à été crée le **${utc(message.client.user.createdTimestamp).format('DD/MM/YYYY à HH:mm:ss')}**\n● **Alcatraz** est un bot open source développé par **GalackQSM#0895**!`)
       .addField('Commandes:', `\`${message.client.commands.size}\` commandes`, true)
       .addField('Aliases:', `\`${message.client.aliases.size}\` aliases`, true)
       .addField('Catégories:', `\`${Object.keys(message.client.types).length}\` catégories`, true)
@@ -64,9 +64,9 @@ module.exports = class StatsCommand extends Command {
       .addField('__Serveur__', `${serverStats}`)
       .addField(
         '**'+emojis.liens+' Liens**', 
-        '**[Ajouter Alcatraz](https://discordapp.com/oauth2/authorize?client_id=774652242787041310&scope=bot&permissions=2146958847) | ' +
-        '[Alcatraz Empire](https://discord.gg/HPtTfqDdMr) | ' +
-        '[Github](https://github.com/GalackQSM/Alcatraz)**'
+        '**[Ajouter Alcatraz](https://chillbot.me/invite) | ' +
+        '[Alcatraz Empire](https://chillbot.me/discord) | ' +
+        '[Github](https://github.com/ThisDudeBoy)**'
       )
         .setImage('https://i.imgur.com/WP9d2Z2.png')
         .setFooter("© 2020 - Alcatraz | Projet open-source")
