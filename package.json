@@ -24,7 +24,7 @@
     "node-superfetch": "^0.1.10",
     "setimmediate": "^1.0.5",
     "winston": "^3.3.3",
-    "yaml": "^1.10.0",
+    "yaml": "^2.2.2",
     "youtube-search": "^1.1.4"
   },
   "devDependencies": {
